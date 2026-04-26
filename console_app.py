@@ -28,7 +28,7 @@ def main():
             file_path = input("Enter CSV file path or press Enter for data/names.csv: ")
 
             if file_path.strip() == "":
-                file_path = "data/names.csv"
+                file_path = "names.csv"
 
             db.load_csv_data(file_path)
 
