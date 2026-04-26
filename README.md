@@ -12,7 +12,8 @@ Then after that load the the database by going to tha api_app and run load_data.
 Then in the terminal type: "python -m uvicor api_app.main:app --reload" to run the api. After open up your browser and enter this http://127.0.0.1:8000. If everthing is working should pop up with "Baby Name API is running"
 
 To run the cosole application go to the project root folder and run: console_app/consolap.py and then you can use the menu to do the following things below:
--Add records
+
+- Add records
 - Search names
 - Update records
 - Delete records
