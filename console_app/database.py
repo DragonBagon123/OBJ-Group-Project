@@ -18,7 +18,7 @@ class BabyNameDatabase:
             with self.connect() as conn:
                 cursor = conn.cursor()
                 cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS babynames (
+                    CREATE TABLE IF NOT EXISTS names (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         name TEXT NOT NULL,
                         sex TEXT NOT NULL,
