@@ -18,7 +18,7 @@ class BabyNameDatabase:
             with self.connect() as conn:
                 cursor = conn.cursor()
                 cursor.execute("""
-                    CREATE TABLE IF NOT EXISTS baby_names (
+                    CREATE TABLE IF NOT EXISTS babynames (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
                         name TEXT NOT NULL,
                         sex TEXT NOT NULL,
@@ -44,7 +44,7 @@ class BabyNameDatabase:
 
                     for row in reader:
                         cursor.execute("""
-                            INSERT INTO baby_names (name, sex, count, year)
+                            INSERT INTO babynames (name, sex, count, year)
                             VALUES (?, ?, ?, ?)
                         """, (
                             row["name"].strip(),
@@ -66,7 +66,7 @@ class BabyNameDatabase:
             with self.connect() as conn:
                 cursor = conn.cursor()
                 cursor.execute("""
-                    INSERT INTO baby_names (name, sex, count, year)
+                    INSERT INTO babynames (name, sex, count, year)
                     VALUES (?, ?, ?, ?)
                 """, (name, sex, count, year))
                 conn.commit()
@@ -80,7 +80,7 @@ class BabyNameDatabase:
                 cursor = conn.cursor()
                 cursor.execute("""
                     SELECT id, name, sex, count, year
-                    FROM baby_names
+                    FROM babynames
                     WHERE LOWER(name) = LOWER(?)
                     ORDER BY year ASC
                 """, (name,))
@@ -102,7 +102,7 @@ class BabyNameDatabase:
             with self.connect() as conn:
                 cursor = conn.cursor()
                 cursor.execute("""
-                    UPDATE baby_names
+                    UPDATE babynames
                     SET name = ?, sex = ?, count = ?, year = ?
                     WHERE id = ?
                 """, (name, sex, count, year, record_id))
@@ -121,7 +121,7 @@ class BabyNameDatabase:
             with self.connect() as conn:
                 cursor = conn.cursor()
                 cursor.execute("""
-                    DELETE FROM baby_names
+                    DELETE FROM babynames
                     WHERE id = ?
                 """, (record_id,))
                 conn.commit()
