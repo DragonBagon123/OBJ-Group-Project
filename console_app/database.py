@@ -2,7 +2,7 @@ import sqlite3
 import csv
 import os
 
-DB_NAME = "baby_names.db"
+DB_NAME = "babynames.db"
 
 
 class BabyNameDatabase:
