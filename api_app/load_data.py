@@ -2,11 +2,7 @@ import sqlite3
 import pandas as pd
 import os
 
-####Creates database in the same folder as this file (api_app)
-BASE_DIR = os.path.dirname(__file__)
-DB_PATH = os.path.join(BASE_DIR, "babynames.db")
-conn = sqlite3.connect(DB_PATH)
-
+conn = sqlite3.connect("babynames.db")
 cursor = conn.cursor()
 
 cursor.execute("""
