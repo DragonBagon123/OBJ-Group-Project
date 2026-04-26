@@ -12,7 +12,7 @@ Then after that load the the database by going to tha api_app and run load_data.
 Then in the terminal type: "python -m uvicorn main:app --reload" to run the api. After open up your browser and enter this "http://127.0.0.1:8000". If everthing is working should pop up with "Baby Name API is running" Once that you should be to go. To search up for names you type this into your browser "http://127.0.0.1:8000/nameinfo?name=Mary".
 Another example could be replace Mary with Emma.
 
-To run the cosole application go to the project root folder and run: console_app/consolap.py and then you can use the menu to do the following things below:
+To run the console application go to the project root folder and run console_app.py and then you can use the menu to do the following things below:
 
 - Add records
 - Search names
